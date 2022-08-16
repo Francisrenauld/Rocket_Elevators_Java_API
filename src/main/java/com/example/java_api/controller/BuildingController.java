@@ -22,7 +22,7 @@ public class BuildingController {
 
     }
 
-    @GetMapping("/get-vuilding-by-id/{id}")
+    @GetMapping("/get-building-by-id/{id}")
     public Building getSingleBuilding(@PathVariable("id") Integer id){
 
         return BuildingRepo.findById(id).get();
