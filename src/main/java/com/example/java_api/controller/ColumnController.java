@@ -17,19 +17,11 @@ public class ColumnController {
 
     @GetMapping("/get-all-columns")
     public List<Column> getAllColumn(){
-
         return ColumnRepo.findAll();
-
     }
 
     @GetMapping("/get-column-by-id/{id}")
     public Column getSingleColumn(@PathVariable("id") Integer id){
-
         return ColumnRepo.findById(id).get();
-
     }
-
-
-
-
 }

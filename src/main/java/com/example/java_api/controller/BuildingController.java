@@ -17,19 +17,11 @@ public class BuildingController {
 
     @GetMapping("/get-all-buildings")
     public List<Building> getAllBuilding(){
-
         return BuildingRepo.findAll();
-
     }
 
     @GetMapping("/get-building-by-id/{id}")
     public Building getSingleBuilding(@PathVariable("id") Integer id){
-
         return BuildingRepo.findById(id).get();
-
     }
-
-
-
-
 }

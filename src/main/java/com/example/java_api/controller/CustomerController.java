@@ -17,19 +17,11 @@ public class CustomerController {
 
     @GetMapping("/get-all-customer")
     public List<Customer> getAllCustomer(){
-
         return CustomerRepo.findAll();
-
     }
 
     @GetMapping("/get-customer-by-id/{id}")
     public Customer getSingleCustomer(@PathVariable("id") Integer id){
-
         return CustomerRepo.findById(id).get();
-
     }
-
-
-
-
 }

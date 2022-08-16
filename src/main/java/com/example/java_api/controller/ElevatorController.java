@@ -17,19 +17,11 @@ public class ElevatorController {
 
     @GetMapping("/get-all-elevators")
     public List<Elevator> getAllElevator(){
-
         return MySqlRepository2.findAll();
-
     }
 
     @GetMapping("/get-elevator-by-id/{id}")
     public Elevator getSingleElevator(@PathVariable("id") Integer id){
-
         return MySqlRepository2.findById(id).get();
-
     }
-
-
-
-
 }

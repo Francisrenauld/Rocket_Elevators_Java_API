@@ -17,19 +17,11 @@ public class StoreController {
 
     @GetMapping("/get-all-users")
     public List<User> getAllUsers(){
-
         return mySqlRepository.findAll();
-
     }
 
     @GetMapping("/get-user-by-id/{id}")
     public User getSingleUser(@PathVariable("id") Integer id){
-
         return mySqlRepository.findById(id).get();
-
     }
-
-
-
-
 }
