@@ -1,7 +1,7 @@
 package com.example.java_api.controller;
 
 import com.example.java_api.model.Elevator;
-import com.example.java_api.repository.MySqlRepository2;
+import com.example.java_api.repository.ElevatorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,15 +13,15 @@ import java.util.*;
 public class ElevatorController {
 
     @Autowired
-    MySqlRepository2 MySqlRepository2;
+    ElevatorRepo ElevatorRepo;
 
     @GetMapping("/get-all-elevators")
     public List<Elevator> getAllElevator(){
-        return MySqlRepository2.findAll();
+        return ElevatorRepo.findAll();
     }
 
     @GetMapping("/get-elevator-by-id/{id}")
     public Elevator getSingleElevator(@PathVariable("id") Integer id){
-        return MySqlRepository2.findById(id).get();
+        return ElevatorRepo.findById(id).get();
     }
 }
