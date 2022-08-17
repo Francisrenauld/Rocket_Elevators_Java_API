@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.persistence.Column;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -27,6 +28,7 @@ public class Battery {
     private LocalDate Date_Of_Last_Inspection;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
-    private Integer building_id;
+    @Column(name="building_id")
+    private Integer buildingId;
     private Integer employee_id;
 }
