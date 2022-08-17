@@ -4,10 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-
 import javax.persistence.*;
 import javax.persistence.Column;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity

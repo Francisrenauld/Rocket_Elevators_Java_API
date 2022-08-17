@@ -23,7 +23,7 @@ public class CustomerController {
         return CustomerRepo.findById(id).get();
     }
 
-    @PostMapping("/add-customer")
+    @PostMapping("/create-customer")
     public Customer create(@RequestBody Customer newCustomer){
         return CustomerRepo.save(newCustomer);
     }

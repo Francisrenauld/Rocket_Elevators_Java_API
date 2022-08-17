@@ -1,5 +1,6 @@
 package com.example.java_api.controller;
 
+import com.example.java_api.model.Customer;
 import com.example.java_api.model.Intervention;
 import com.example.java_api.repository.InterventionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,10 @@ public class InterventionController {
         intervention.setReport((body.get("report")));
         InterventionRepo.save(intervention);
         return intervention;
+    }
+
+    @PostMapping("/create-intervention")
+    public Intervention create(@RequestBody Intervention newIntervention){
+        return InterventionRepo.save(newIntervention);
     }
 }
