@@ -3,9 +3,7 @@ package com.example.java_api.controller;
 import com.example.java_api.model.Customer;
 import com.example.java_api.repository.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -24,4 +22,10 @@ public class CustomerController {
     public Customer getSingleCustomer(@PathVariable("id") Integer id){
         return CustomerRepo.findById(id).get();
     }
+
+    @PostMapping("/add-customer")
+    public Customer create(@RequestBody Customer newCustomer){
+        return CustomerRepo.save(newCustomer);
+    }
+
 }

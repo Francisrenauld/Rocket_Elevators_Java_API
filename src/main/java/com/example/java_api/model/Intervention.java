@@ -3,8 +3,10 @@ package com.example.java_api.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.persistence.Column;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -16,7 +18,8 @@ import java.time.LocalDateTime;
 public class Intervention {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private Integer author;
     private Integer customer_id;
@@ -30,6 +33,10 @@ public class Intervention {
     private String result;
     private String report;
     private String status;
+    @CreationTimestamp
+    @Column(name = "updated_at", updatable = false)
     private LocalDateTime updated_at;
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime created_at;
 }
