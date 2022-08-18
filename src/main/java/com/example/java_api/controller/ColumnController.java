@@ -1,5 +1,6 @@
 package com.example.java_api.controller;
 
+import com.example.java_api.model.Battery;
 import com.example.java_api.model.Column;
 import com.example.java_api.repository.ColumnRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,10 @@ public class ColumnController {
     @GetMapping("/get-column-by-id/{id}")
     public Column getSingleColumn(@PathVariable("id") Integer id){
         return ColumnRepo.findById(id).get();
+    }
+
+    @GetMapping("/get-column-by-battery/{batteryId}")
+    public List<Column> getBatteryByBuilding(@PathVariable("batteryId") Integer batteryId){
+        return ColumnRepo.findByBatteryId(batteryId);
     }
 }

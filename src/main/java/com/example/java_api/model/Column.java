@@ -3,9 +3,7 @@ package com.example.java_api.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,5 +23,6 @@ public class Column {
     private String Notes;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
-    private Integer battery_id;
+    @javax.persistence.Column(name="battery_id")
+    private Integer batteryId;
 }
