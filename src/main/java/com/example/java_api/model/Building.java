@@ -26,6 +26,9 @@ public class Building {
     private String Technical_Contact_Phone_For_The_Building;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
-    private Integer customer_id;
+    //private Integer customer_id;
     private Integer address_id;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 }
