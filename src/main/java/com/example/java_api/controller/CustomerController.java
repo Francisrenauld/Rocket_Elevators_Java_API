@@ -11,21 +11,21 @@ import java.util.*;
 public class CustomerController {
 
     @Autowired
-    CustomerRepo CustomerRepo;
+    CustomerRepo customerRepo;
 
     @GetMapping("/get-all-customer")
     public List<Customer> getAllCustomer(){
-        return CustomerRepo.findAll();
+        return customerRepo.findAll();
     }
 
     @GetMapping("/get-customer-by-id/{id}")
     public Customer getSingleCustomer(@PathVariable("id") Integer id){
-        return CustomerRepo.findById(id).get();
+        return customerRepo.findById(id).get();
     }
 
     @PostMapping("/create-customer")
     public Customer create(@RequestBody Customer newCustomer){
-        return CustomerRepo.save(newCustomer);
+        return customerRepo.save(newCustomer);
     }
 
 }

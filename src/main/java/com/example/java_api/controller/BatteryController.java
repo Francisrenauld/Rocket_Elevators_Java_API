@@ -12,20 +12,20 @@ import java.util.*;
 public class BatteryController {
 
     @Autowired
-    BatteryRepo BatteryRepo;
+    BatteryRepo batteryRepo;
 
     @GetMapping("/get-all-batteries")
     public List<Battery> getAllBattery(){
-        return BatteryRepo.findAll();
+        return batteryRepo.findAll();
     }
 
     @GetMapping("/get-battery-by-id/{id}")
     public Battery getSingleBattery(@PathVariable("id") Integer id){
-        return BatteryRepo.findById(id).get();
+        return batteryRepo.findById(id).get();
     }
     @GetMapping("/get-battery-by-building/{buildingId}")
     public List<Battery> getBatteryByBuilding(@PathVariable("buildingId") Integer buildingId){
-        return BatteryRepo.findByBuildingId(buildingId);
+        return batteryRepo.findByBuildingId(buildingId);
     }
 
 

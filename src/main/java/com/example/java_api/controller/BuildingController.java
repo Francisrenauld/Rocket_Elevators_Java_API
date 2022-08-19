@@ -13,15 +13,15 @@ import java.util.*;
 public class BuildingController {
 
     @Autowired
-    BuildingRepo BuildingRepo;
+    BuildingRepo buildingRepo;
 
     @GetMapping("/get-all-buildings")
     public List<Building> getAllBuilding(){
-        return BuildingRepo.findAll();
+        return buildingRepo.findAll();
     }
 
     @GetMapping("/get-building-by-id/{id}")
     public Building getSingleBuilding(@PathVariable("id") Integer id){
-        return BuildingRepo.findById(id).get();
+        return buildingRepo.findById(id).get();
     }
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "employees")
-public class Employees {
+public class Employee {
 
     @Id
     @Column(name="id")
@@ -21,5 +21,4 @@ public class Employees {
     private String last_Name;
     private String title_Or_Function;
     private String email;
-
 }

@@ -13,15 +13,15 @@ import java.util.*;
 public class ElevatorController {
 
     @Autowired
-    ElevatorRepo ElevatorRepo;
+    ElevatorRepo elevatorRepo;
 
     @GetMapping("/get-all-elevators")
     public List<Elevator> getAllElevator(){
-        return ElevatorRepo.findAll();
+        return elevatorRepo.findAll();
     }
 
     @GetMapping("/get-elevator-by-id/{id}")
     public Elevator getSingleElevator(@PathVariable("id") Integer id){
-        return ElevatorRepo.findById(id).get();
+        return elevatorRepo.findById(id).get();
     }
 }

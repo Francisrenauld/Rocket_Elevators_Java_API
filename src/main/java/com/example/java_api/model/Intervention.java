@@ -19,13 +19,18 @@ public class Intervention {
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
+    @Column( insertable =false, updatable=false)
     private Integer author;
+    @Column( insertable=false, updatable=false)
     private Integer customer_id;
+    @Column( insertable=false, updatable=false)
     private Integer building_id;
+    @Column( insertable=false, updatable=false)
     private Integer battery_id;
+    @Column( insertable=false, updatable=false)
     private Integer column_id;
+    @Column( insertable=false, updatable=false)
     private Integer elevator_id;
-    private Integer employee_id;
     private LocalDateTime start_date_and_time_of_the_intervention;
     private LocalDateTime end_date_and_time_of_the_intervention;
     private String result;
@@ -37,4 +42,18 @@ public class Intervention {
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime created_at;
+
+    @ManyToOne
+    private Customer customer;
+    @ManyToOne
+    private Building building;
+    @ManyToOne
+    private Battery battery;
+    @ManyToOne
+    private Columns column;
+    @ManyToOne
+    private Elevator elevator;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
 }
