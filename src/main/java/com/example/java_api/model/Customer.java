@@ -33,8 +33,12 @@ public class Customer {
     @CreationTimestamp
     @Column(name = "updated_at", updatable = false)
     private LocalDateTime updated_at;
-    private Integer user_id;
+    //private Integer user_id;
     private Integer address_id;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }
 
