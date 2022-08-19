@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface CustomerRepo extends JpaRepository<Customer,Integer>{
 
-    Object findByUser_id(Long user_id);
+    Object findByUser_id(Integer user_id);
 }
 

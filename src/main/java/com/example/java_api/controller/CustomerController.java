@@ -34,7 +34,7 @@ public class CustomerController {
     @GetMapping("/get-customer-by-current-user")
     public Customer getACustomer(){
         User auth = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Long user_id = auth.getId();
+        Integer user_id = auth.getId();
         return (Customer) customerRepo.findByUser_id(user_id);
     }
 }

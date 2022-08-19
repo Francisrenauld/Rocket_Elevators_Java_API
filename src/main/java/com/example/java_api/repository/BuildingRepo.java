@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BuildingRepo extends JpaRepository<Building,Integer>{
 
-    Object findByCustomer_id(Long customer_id);
+    Object findByCustomer_id(Integer customer_id);
 }

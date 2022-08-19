@@ -35,9 +35,9 @@ public class BuildingController {
     @GetMapping("/get-building-by-current-user")
     public Building getCurrentBuilding(){
         User auth = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Long user_id = auth.getId();
+        Integer user_id = auth.getId();
         Customer customer = (Customer) customerRepo.findByUser_id(user_id);
-        Long Customer_id = customer.getId();
+        Integer Customer_id = customer.getId();
         return (Building) buildingRepo.findByCustomer_id(Customer_id);
     }
 }
