@@ -1,5 +1,6 @@
 package com.example.java_api.controller;
 
+import com.example.java_api.model.Columns;
 import com.example.java_api.model.Elevator;
 import com.example.java_api.repository.ElevatorRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,10 @@ public class ElevatorController {
     @GetMapping("/get-elevator-by-id/{id}")
     public Elevator getSingleElevator(@PathVariable("id") Integer id){
         return elevatorRepo.findById(id).get();
+    }
+
+    @GetMapping("/get-elevator-by-columnId/{columnId}")
+    public List<Elevator> getBatteryByBuilding(@PathVariable("columnId") Integer columnId){
+        return elevatorRepo.findByColumnId(columnId);
     }
 }

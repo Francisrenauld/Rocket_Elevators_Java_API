@@ -13,6 +13,8 @@ public class InterventionPostController {
 
     @PostMapping("/create-intervention")
     public InterventionPost create(@RequestBody InterventionPost newInterventionPost){
+        System.out.println(newInterventionPost);
+        System.out.println(newInterventionPost.getCustomer());
         return interventionPostRepo.save(newInterventionPost);
     }
 }
