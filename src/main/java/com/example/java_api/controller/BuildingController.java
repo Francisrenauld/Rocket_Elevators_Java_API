@@ -38,6 +38,6 @@ public class BuildingController {
         Integer user_id = auth.getId();
         Customer customer = (Customer) customerRepo.findByUser_id(user_id);
         Integer Customer_id = customer.getId();
-        return (Building) buildingRepo.findByCustomer_id(Customer_id);
+        return buildingRepo.findByCustomerId(Customer_id);
     }
 }

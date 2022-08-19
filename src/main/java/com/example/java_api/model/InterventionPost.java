@@ -20,12 +20,6 @@ public class InterventionPost {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
     private Integer author;
-    //private Integer customer_id;
-    // private Integer building_id;
-    //private Integer battery_id;
-    //private Integer column_id;
-    //private Integer elevator_id;
-    //private Integer employee_id;
     private LocalDateTime start_date_and_time_of_the_intervention;
     private LocalDateTime end_date_and_time_of_the_intervention;
     private String result;
